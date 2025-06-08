@@ -1,0 +1,88 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 40px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+}
+
+.user-info h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.dashboard-actions a {
+    text-decoration: none;
+    color: #007BFF;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px 40px;
+}
+
+.meal-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.meal-card {
+    width: 250px;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.meal-card:hover {
+    transform: translateY(-5px);
+}
+
+.meal-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.no-image {
+    height: 180px;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-style: italic;
+}
+
+.meal-info {
+    padding: 15px;
+    text-align: left;
+}
+
+.meal-info h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.meal-info p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #555;
+}

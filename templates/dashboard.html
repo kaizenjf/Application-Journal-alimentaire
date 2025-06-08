@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Espace</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body>
+
+    <header class="dashboard-header">
+        <div class="user-info">
+            <h1>Bienvenue, {{ user.pseudo }}</h1>
+            <p><strong>Email :</strong> {{ user.email }}</p>
+        </div>
+        <div class="dashboard-actions">
+            <a href="{{ url_for('add_meal') }}">Ajouter un nouveau repas</a> |
+            <a href="{{ url_for('logout') }}">Se déconnecter</a>
+        </div>
+    </header>
+
+    <main>
+        <h2>Vos repas :</h2>
+        <div class="meal-cards">
+            {% for meal in user.meals %}
+            <div class="meal-card">
+                {% if meal.image_url %}
+                    <img src="{{ meal.image_url }}" alt="photo" class="meal-img">
+                {% else %}
+                    <div class="no-image">Aucune image</div>
+                {% endif %}
+                <div class="meal-info">
+                    <h3>{{ meal.name }}</h3>
+                    <p><strong>Date :</strong> {{ meal.timestamp.strftime("%d/%m/%Y %H:%M") }}</p>
+                    <p><strong>Poids :</strong> {{ meal.poids or 0 }} g</p>
+                    <p><strong>Quantité :</strong> {{ meal.quantite or 0 }}</p>
+                </div>
+            </div>
+            {% else %}
+                <p>Aucun repas encore enregistré.</p>
+            {% endfor %}
+        </div>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion / Inscription</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="switch-buttons">
+            <button id="btn-login">Connexion</button>
+            <button id="btn-register">Inscription</button>
+        </div>
+
+        <div class="form-container">
+            <!-- Formulaire de Connexion -->
+            <form action="/" method="POST" id="form-login" class="active">
+                <h2>Connexion</h2>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Mot de passe" required>
+                <button type="submit">Se connecter</button>
+            </form>
+
+            <!-- Formulaire d'Inscription -->
+            <form action="/register" method="POST" id="form-register">
+                <h2>Inscription</h2>
+                <input type="text" name="pseudo" placeholder="Votre pseudo" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Mot de passe" required>
+                <button type="submit">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
